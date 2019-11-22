@@ -1,13 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Scouting</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
-<body>
-    <h1>Scouting Page</h1>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="clientscript.js"></script>
+<body onload="init()">
+<h1>Scouting</h1>
+<div class="prompt">
+    <h2>Team Number</h2>
+    <p>Please enter the team number that you are scouting</p>
+    <input id="teamnum" type="text" value=""/>
+</div>
+<div class="prompt">
+    <h2>Some Incremental data</h2>
+    <p>Press the up and down arrows in order to add points as the robot moves in the match</p>
+    <h1 id="incdata">0</h1>
+    <input class="butt" id="downbutton" type="button" value="-" onclick="downButton()"/>
+    <input class="butt" id="upbutton" type="button" value="+" onclick="upButton()"/>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/clientscript.js"></script>
 </body>
-</html>
+</html

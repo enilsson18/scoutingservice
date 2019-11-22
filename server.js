@@ -7,6 +7,10 @@ app.get('/', function(req,res){
     res.sendFile(__dirname + "/index.html");
 });
 
+app.get('/:File', function(req,res){
+    res.sendFile(__dirname + "/" + req.params.File);
+});
+
 io.on("connection", function (socket){
     socket.on("newConnection", function(){
        console.log("New Connection");

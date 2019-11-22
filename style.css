@@ -1,0 +1,46 @@
+html {
+    background: #2F3136;
+}
+
+body {
+    text-align:center;
+    color:#CCDADE;
+}
+
+p {
+    width:80%;
+    margin: auto;
+}
+
+input {
+    text-align:center;
+    border: solid 2px black;
+    background: #484C52;
+}
+
+.prompt {
+    margin: auto;
+    width: 200px;
+    height: 300px;
+    border: solid 2px black;
+}
+
+body::-webkit-scrollbar {
+    background: #000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ff8300;
+}
+
+h1 {
+    margin: 5px 0px 5px 0px;
+}
+
+.butt {
+    margin: 0px;
+    width:40%;
+    height: 25%;
+    font-size: 110px;
+    line-height: 0px;
+}
