@@ -1,9 +1,16 @@
 var socket = io();
+var inc;
 
 socket.on("connect", function(){
    console.log("connected")
    socket.emit("newConnection");
 });
+
+function submit()
+{
+   var teamnum = document.getElementById('teamnum').value;
+   socket.emit('submit', [[teamnum,inc]]);
+}
 
 function init(){
    inc = 0;
