@@ -1,3 +1,8 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 html {
     background: #2F3136;
 }
@@ -20,9 +25,9 @@ input {
 
 .prompt {
     margin: auto;
-    width: 200px;
-    height: 300px;
-    border: solid 2px black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:200px;
 }
 
 body::-webkit-scrollbar {
@@ -34,13 +39,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 h1 {
-    margin: 5px 0px 5px 0px;
+    margin: 10px;
 }
 
 .butt {
     margin: 0px;
-    width:40%;
-    height: 25%;
+    width:80px;
+    height: 80px;
     font-size: 110px;
     line-height: 0px;
 }
