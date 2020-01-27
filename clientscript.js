@@ -66,7 +66,8 @@ function submit()
 
         tempList.push(data[i].data);
     }
-
+    socket.emit('submit', [tempList]);
+    /*
     if (socket.connected){
         socket.emit('submit', [tempList]);
         console.log("submited succesfully");
@@ -77,6 +78,7 @@ function submit()
         }
         createCookie(i,tempList);
     }
+     */
 }
 
 //the function call to increment any value for buttons and such
