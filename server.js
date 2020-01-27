@@ -6,6 +6,9 @@ const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
 
+const adminPassword = "1787MilkMonigle";
+var selectedSheet = readFile("sheet.txt");
+
 app.get('/', function(req,res){
     res.sendFile(__dirname + "/index.html");
 });
@@ -16,7 +19,14 @@ app.get('/:File', function(req,res){
 
 io.on("connection", function (socket){
     socket.on("newConnection", function(){
-       console.log("New Connection");
+        console.log("New Connection");
+    });
+
+    socket.on("setSheet", function(password, txt){
+        if (password == adminPassword) {
+            writeFile("sheet.txt",txt);
+            selectedSheet = txt;
+        }
     });
 
     socket.on("submit", function (data){
@@ -46,7 +56,7 @@ function AppendData(auth){
 
     sheets.spreadsheets.values.append({
         spreadsheetId: '1kefhQkz-rkfXwMBTgZmBuqQWz7ENG1dnX_a0mJrT0wM',
-        range: 'Sheet1',
+        range: selectedSheet,
         valueInputOption: 'RAW',
         insertDataOption: 'INSERT_ROWS',
         resource: {
@@ -121,5 +131,18 @@ function getNewToken(oAuth2Client, callback) {
             });
             callback(oAuth2Client);
         });
+    });
+}
+
+//file reading
+function readFile(fileName){
+    return fs.readFileSync(fileName, 'utf8');
+}
+
+//file writing
+function writeFile(fileName,data){
+    fs.writeFile(fileName, data, (err) => {
+        if (err) console.log(err);
+        console.log("saved: " + data + " to file with name: " + fileName);
     });
 }

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>FieldScouting</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload="init()">
+<ol id="questions">
+    <li id="0">
+        <h1>Team Number</h1>
+        <p>Please enter the team number that you are scouting</p>
+        <input type="text" value=""/>
+    </li>
+    <li id="1">
+        <h2>Match Number</h2>
+        <input type="text" value=""/>
+    </li>
+    <li id="2">
+        <h2>Alliance</h2>
+        <select class="boolean">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+        </select>
+    </li>
+    <hr class="major">
+    <h1>Auto</h1>
+    <hr class="minor">
+    <li id="3">
+        <h2>Did they cross the initiation line?</h2>
+        <select class="boolean">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+    </li>
+    <li id="4">
+        <h2>Power cells scored in the low goal</h2>
+        <h1 >0</h1>
+        <input class="butt" type="button" value="-"/>
+        <input class="butt" type="button" value="+"/>
+    </li>
+    <li id="5">
+        <h2>Power cells scored in the high goal</h2>
+        <h1 >0</h1>
+        <input class="butt" type="button" value="-"/>
+        <input class="butt" type="button" value="+"/>
+    </li>
+    <li id="6">
+        <h2>Power cells scored in the inner goal</h2>
+        <h1 >0</h1>
+        <input class="butt" type="button" value="-"/>
+        <input class="butt" type="button" value="+"/>
+    </li>
+    <hr class="major">
+    <h1>Teleop</h1>
+    <hr class="minor">
+    <li id="7">
+        <h2>Power cells scored in the low goal</h2>
+        <h1 >0</h1>
+        <input class="butt" type="button" value="-"/>
+        <input class="butt" type="button" value="+"/>
+    </li>
+    <li id="8">
+        <h2>Power cells scored in the high goal</h2>
+        <h1 >0</h1>
+        <input class="butt" type="button" value="-"/>
+        <input class="butt" type="button" value="+"/>
+    </li>
+    <li id="9">
+        <h2>Power cells scored in the inner goal</h2>
+        <h1>0</h1>
+        <input class="butt" type="button" value="-"/>
+        <input class="butt" type="button" value="+"/>
+    </li>
+    <li id="10">
+        <h2>Did they spin the wheel 3-5 times?</h2>
+        <select class="boolean">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+    </li>
+    <li id="11">
+        <h2>Did they spin the wheel to a color?</h2>
+        <select class="boolean">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+    </li>
+    <li id="12">
+        <h2>Did they climb?</h2>
+        <select class="boolean">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+    </li>
+    <li id="13">
+        <h2>Are they Level?</h2>
+        <select class="boolean">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+    </li>
+    <li id="14">
+        <h2>Extra info</h2>
+        <textarea class="bigText" rows="4" cols="50">
+
+        </textarea>
+    </li>
+    <li id="15">
+        <input class="submit" type="button" value="Submit" onclick="submit()"/>
+    </li>
+</ol>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="question.js"></script>
+<script src="clientscript.js"></script>
+<script>
+    //sets up all the questions and data types
+    /*function init(){
+       data = [];
+       data.push(new question("text"));
+       data.push(new question("text"));
+       data.push(new question("dropdown", ["red", "blue"]));
+       data.push(new question("dropdown", ["no", "yes"]));
+       data.push(new question("increment"));
+       data.push(new question("increment"));
+       data.push(new question("increment"));
+       data.push(new question("increment"));
+       data.push(new question("increment"));
+       data.push(new question("increment"));
+       data.push(new question("increment"));
+       data.push(new question("dropdown", ["no", "yes"]));
+       data.push(new question("dropdown", ["no", "yes"]));
+       data.push(new question("dropdown", ["no", "yes"]));
+       data.push(new question("dropdown", ["no", "yes"]));
+       data.push(new question("textarea"));
+
+
+       for (var i = 0; i < data.length; i++){
+          if (data[i].type == "text") {
+             list[i].getElementsByTagName("input")[0].value = data[i].data;
+          }
+          if (data[i].type == "increment") {
+              list[i].getElementsByTagName("h1")[0].innerText = data[i].data;
+          }
+       }
+    }*/
+</script>
+</body>
+</html>

@@ -8,8 +8,9 @@ html {
 }
 
 body {
+    padding: 10px;
     text-align:center;
-    color:#CCDADE;
+    color:#ff8300;
 }
 
 p {
@@ -19,6 +20,9 @@ p {
 
 input {
     text-align:center;
+    width: 240px;
+    height: 25px;
+    font-size:24px;
     border: solid 2px black;
     background: #484C52;
 }
@@ -44,8 +48,40 @@ h1 {
 
 .butt {
     margin: 0px;
-    width:80px;
-    height: 80px;
-    font-size: 110px;
+    width:60px;
+    height: 60px;
+    font-size: 90px;
     line-height: 0px;
+}
+
+.boolean{
+    margin:5px;
+    width:90px;
+    height:35px;
+    font-size: 30px;
+    background-color: #484C52;
+}
+
+#questions li {
+    font-size:24px;
+    margin: 0px 0px 12px 0px;
+    font-family: "Verdana", sans;
+}
+
+#14 {
+    font-size:7px;
+}
+
+hr.minor {
+    margin: 5px auto 15px auto;
+    border: 2px solid #000000;
+    width: 75%;
+    border-radius: 5px;
+}
+
+hr.major {
+    margin: 5px auto 15px auto;
+    border: 3px solid #000000;
+    width: 100%;
+    border-radius: 5px;
 }
