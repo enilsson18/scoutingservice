@@ -1,0 +1,45 @@
+body {
+    padding: 10px;
+    text-align:center;
+    color:#ff8300;
+}
+
+a:link, a:visited {
+    background-color: #ff8300;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+h1 {
+    font-family: monospace;
+    font-size: 40px;
+}
+
+div1 {
+    font-family: monospace;
+    font-size: 20px;
+    float: left;
+    padding-top: 40px;
+}
+
+div2 {
+    font-family: monospace;
+    font-size: 20px;
+    float: right;
+    padding-top: 40px;
+}
+
+html {
+    background: #2F3136;
+}
+
+body::-webkit-scrollbar {
+    background: #000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ff8300;
+}

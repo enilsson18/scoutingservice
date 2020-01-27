@@ -7,6 +7,7 @@ var list;
 socket.on("connect", function(){
     console.log("connected")
     socket.emit("newConnection");
+    /*
     var i = 0;
     while(getCookie("" + i + "") != null){
         socket.emit("submit", [getCookie("" + i + "")]);
@@ -14,6 +15,7 @@ socket.on("connect", function(){
         deleteCookie("" + i + "");
         i++;
     }
+    */
 
 });
 
