@@ -25,7 +25,6 @@ function init(){
         //text
         if (list[i].getElementsByTagName("input")[0] != undefined && list[i].getElementsByTagName("input")[0].type == "text"){
             data.push(new question("text"));
-            console.log("newtext");
         }
         //dropdown menu
         else if (list[i].getElementsByTagName("select")[0] != undefined){
@@ -81,6 +80,7 @@ function submit()
             i++;
         }
         createCookie(i,tempList);
+        console.log("made cookie");
     }
 
 }
