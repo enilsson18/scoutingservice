@@ -7,7 +7,7 @@ var list;
 socket.on("connect", function(){
     console.log("connected")
     socket.emit("newConnection");
-    /*
+
     var i = 0;
     while(getCookie("" + i + "") != null){
         socket.emit("submit", [getCookie("" + i + "")]);
@@ -15,8 +15,6 @@ socket.on("connect", function(){
         deleteCookie("" + i + "");
         i++;
     }
-    */
-
 });
 
 function init(){
@@ -60,6 +58,10 @@ function submit()
     for (var i = 0; i < data.length; i++){
         if (data[i].type == "text"){
             data[i].data = document.getElementById("" + i + "").getElementsByTagName("input")[0].value;
+            if(data[0].data == ""){
+                break;
+            }
+
         }
         if (data[i].type == "dropdown"){
             var select = document.getElementById("" + i + "").getElementsByTagName("select")[0];
@@ -69,7 +71,7 @@ function submit()
         tempList.push(data[i].data);
     }
     socket.emit('submit', [tempList]);
-    /*
+
     if (socket.connected){
         socket.emit('submit', [tempList]);
         console.log("submited succesfully");
@@ -80,7 +82,7 @@ function submit()
         }
         createCookie(i,tempList);
     }
-     */
+
 }
 
 //the function call to increment any value for buttons and such
