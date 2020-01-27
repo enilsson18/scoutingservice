@@ -9,7 +9,7 @@ socket.on("connect", function(){
     socket.emit("newConnection");
 
     var i = 0;
-    while(getCookie("" + i + "") != null){
+    while(getCookie("" + i + "") != ""){
         socket.emit("submit", [getCookie("" + i + "")]);
         console.log("submitted data from cookie");
         deleteCookie("" + i + "");
