@@ -9,8 +9,9 @@ socket.on("connect", function(){
     socket.emit("newConnection");
 
     var i = 0;
-    while(getCookie("" + i + "") != ""){
-        socket.emit("submit", [getCookie("" + i + "")]);
+    console.log(getCookie("0").split(','));
+    while(!(getCookie(i) == "")){
+        socket.emit("submit", [getCookie(i).split(",")]);
         console.log("submitted data from cookie");
         deleteCookie("" + i + "");
         i++;
@@ -69,18 +70,21 @@ function submit()
 
         tempList.push(data[i].data);
     }
-    socket.emit('submit', [tempList]);
+
+    //socket.emit('submit', [tempList]);
 
     if (socket.connected){
         socket.emit('submit', [tempList]);
         console.log("submited succesfully");
     } else {
+        tempList.join();
         var i = 0;
-        while(getCookie("" + i + "") == null){
+        while(!(document.cookie.indexOf("" + i + "") === -1 || getCookie(i) == "")) {
             i++;
         }
-        createCookie(i,tempList);
-        console.log("made cookie");
+        createCookie("" + i + "",tempList);
+        //console.log("made cookie at: " + i + " data: " + tempList);
+        //console.log(getCookie("" + i + ""));
     }
 
 }
