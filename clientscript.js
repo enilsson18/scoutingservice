@@ -109,6 +109,10 @@ function updateQuestion(num, change){
     }
 }
 
+function setSheet(pass, txt){
+    io.emit("setSheet", pass, txt);
+}
+
 //the functions that have to do with cookies in case users are offline
 function createCookie(cookieName,cookieValue,daysToExpire=1)
 {
