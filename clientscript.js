@@ -27,6 +27,7 @@ function init(){
         //text
         if (list[i].getElementsByTagName("input")[0] != undefined && list[i].getElementsByTagName("input")[0].type == "text"){
             data.push(new question("text"));
+            list[i].getElementsByTagName("input")[0].value = "";
         }
         //dropdown menu
         else if (list[i].getElementsByTagName("select")[0] != undefined){
@@ -37,10 +38,13 @@ function init(){
                 options.push(select.options[j].value);
             }
             data.push(new question("dropdown", options));
+            list[i].getElementsByTagName("select")[0].selectedIndex = 0;
         }
         //input buttons
         else if(list[i].getElementsByTagName("input")[0] != undefined && list[i].getElementsByTagName("input")[0].type == "button" && list[i].getElementsByTagName("input")[0].value != "Submit"){
             data.push(new question("increment"));
+
+            list[i].getElementsByTagName("h1")[0].innerText = 0;
 
             list[i].getElementsByTagName("input")[0].setAttribute("onclick", "updateQuestion(" + i + ",-1)");
             list[i].getElementsByTagName("input")[1].setAttribute("onclick", "updateQuestion(" + i + ", 1)");
@@ -48,6 +52,7 @@ function init(){
         //textarea
         else if(list[i].getElementsByTagName("textarea")[0] != undefined && list[i].getElementsByTagName("textarea")[0]){
             data.push(new question("textarea"));
+            list[i].getElementsByTagName("textarea")[0].value = "";
         }
     }
 }
@@ -92,6 +97,7 @@ function submit()
         //console.log(getCookie("" + i + ""));
     }
 
+    init();
 }
 
 //the function call to increment any value for buttons and such
