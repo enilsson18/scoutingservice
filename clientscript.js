@@ -64,9 +64,13 @@ function submit()
             }
 
         }
-        if (data[i].type == "dropdown"){
+        else if (data[i].type == "dropdown"){
             var select = document.getElementById("" + i + "").getElementsByTagName("select")[0];
             data[i].data = select.options[select.selectedIndex].value;
+        }
+        else if (data[i].type == "textarea"){
+            data[i].data = document.getElementById("" + i + "").getElementsByTagName("textarea")[0].value;
+            //console.log(data[i].data);
         }
 
         tempList.push(data[i].data);
