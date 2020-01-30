@@ -23,6 +23,7 @@ function init(){
     list = document.getElementById("questions").getElementsByTagName("li");
 
     for (var i = 0; i < list.length; i++){
+        list[i].id = i;
         //text
         if (list[i].getElementsByTagName("input")[0] != undefined && list[i].getElementsByTagName("input")[0].type == "text"){
             data.push(new question("text"));
