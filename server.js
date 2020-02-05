@@ -29,7 +29,8 @@ io.on("connection", function (socket){
         }
     });
 
-    socket.on("submit", function (data){
+    socket.on("submit", function (page, data){
+        selectedSheet = page;
         appendData = data;
         console.log(data);
         authorize(creds,AppendData);

@@ -2,6 +2,7 @@
 var socket = io();
 var data = [];
 var list;
+var sheet;
 
 //the socket call to connect to the server
 socket.on("connect", function(){
@@ -11,7 +12,7 @@ socket.on("connect", function(){
     var i = 0;
     console.log(getCookie("0").split(','));
     while(!(getCookie(i) == "")){
-        socket.emit("submit", [getCookie(i).split(",")]);
+        socket.emit("submit", sheet, [getCookie(i).split(",")]);
         console.log("submitted data from cookie");
         deleteCookie("" + i + "");
         i++;
@@ -21,6 +22,13 @@ socket.on("connect", function(){
 function init(){
     data = [];
     list = document.getElementById("questions").getElementsByTagName("li");
+
+    if (document.title.innerText == "Field Scouting"){
+        sheet = "field";
+    }
+    if (document.title.innerText == "Pit Scouting"){
+        sheet = "pit";
+    }
 
     for (var i = 0; i < list.length; i++){
         list[i].id = i;
@@ -81,11 +89,12 @@ function submit()
         tempList.push(data[i].data);
     }
 
-    //socket.emit('submit', [tempList]);
+    //socket.emit('submit', sheet, [tempList]);
 
     if (socket.connected){
-        socket.emit('submit', [tempList]);
+        socket.emit('submit', sheet, [tempList]);
         console.log("submited succesfully");
+        alert("Your submission has been received!");
     } else {
         tempList.join();
         var i = 0;
@@ -93,6 +102,7 @@ function submit()
             i++;
         }
         createCookie("" + i + "",tempList);
+        alert("Internet issue! Data saved, please reconnect, DO NOT RESUBMIT!");
         //console.log("made cookie at: " + i + " data: " + tempList);
         //console.log(getCookie("" + i + ""));
     }

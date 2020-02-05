@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>PitScouting</title>
+    <title>Pit Scouting</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="init()">
@@ -14,9 +14,7 @@
         <input type="text" value=""/>
     </li>
     <hr class="major">
-    <li>
-        <h1>Base</h1>
-    </li>
+    <h1>Base</h1>
     <hr class="minor">
     <li>
         <h2>What kind of Drivebase?</h2>
@@ -44,9 +42,7 @@
         </select>
     </li>
     <hr class="minor">
-    <li>
-        <h1>Capabilites in auto</h1>
-    </li>
+    <h1>Capabilites in auto</h1>
     <hr class="minor">
     <li>
         <h2>Can they cross the initiation line?</h2>
@@ -57,17 +53,15 @@
         <input type="text" value=""/>
     </li>
     <li>
-        <h2>How many power cells can they score in the high goal?</h2>
+        <h2>How many power cells can they score in the high octagon goal?</h2>
         <input type="text" value=""/>
     </li>
     <li>
-        <h2>How many power cells can they score in the inner goal?</h2>
+        <h2>How many power cells can they score in the high inner goal?</h2>
         <input type="text" value=""/>
     </li>
     <hr class="minor">
-    <li>
-        <h1>End</h1>
-    </li>
+    <h1>End</h1>
     <hr class="minor">
     <li>
         <h2>Can they climb?</h2>
@@ -91,6 +85,10 @@
             <option value="yes">Yes</option>
             <option value="no">No</option>
         </select>
+    </li>
+    <li>
+        <h2>Extra info</h2>
+        <textarea class="bigText" rows="4" cols="50"></textarea>
     </li>
     <li>
         <input class="submit" type="button" value="Submit" onclick="submit()"/>
