@@ -12,10 +12,30 @@ body {
     text-align:center;
     color:#ff8300;
 }
+h1.fix {
+    font-family: serif;
+    font-weight: bolder;
+    font-size:30px;
+}
+
+.section {
+    font-family: serif;
+    font-weight: bolder;
+    font-size: 50px;
+}
 
 p {
     width:80%;
     margin: auto;
+}
+
+.bigText{
+    text-align: start;
+    width: 350px;
+    height: 150px;
+    font-size:24px;
+    border: solid 2px black;
+    background: #484C52;
 }
 
 input {
@@ -52,14 +72,16 @@ h1 {
     height: 60px;
     font-size: 90px;
     line-height: 0px;
+    color: #000;
 }
 
 .boolean{
     margin:5px;
     width:90px;
-    height:35px;
+    height:40px;
     font-size: 30px;
     background-color: #484C52;
+    border: solid 2px black;
 }
 
 #questions li {
@@ -68,8 +90,12 @@ h1 {
     font-family: "Verdana", sans;
 }
 
-#14 {
-    font-size:7px;
+.submit{
+    margin: 20px;
+    width:90px;
+    height: 45px;
+    font-size: 24px;
+    line-height: 0px;
 }
 
 hr.minor {

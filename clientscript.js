@@ -73,6 +73,7 @@ function submit()
         if (data[i].type == "text"){
             data[i].data = document.getElementById("" + i + "").getElementsByTagName("input")[0].value;
             if(data[0].data == ""){
+                alert("Please fill out all Fields before submitting");
                 break;
             }
 

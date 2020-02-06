@@ -1,7 +1,7 @@
 body {
     padding: 10px;
     text-align:center;
-    color:#ff8300;
+    color:#000;
 }
 
 a:link, a:visited {
@@ -13,9 +13,22 @@ a:link, a:visited {
     display: inline-block;
 }
 
+hr.minor {
+    margin: 15px auto 15px auto;
+    border: 2px solid #000000;
+    width: 50%;
+    border-radius: 5px;
+}
+
 h1 {
-    font-family: monospace;
-    font-size: 40px;
+    font-family: sans-seriff;
+    font-size: 50px;
+
+    text-shadow: 2px 2px 1px #ff8300;
+}
+
+h3 {
+    color:#2F3136;
 }
 
 div1 {
