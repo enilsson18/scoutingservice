@@ -6,11 +6,17 @@ body {
 
 a:link, a:visited {
     background-color: #ff8300;
-    color: white;
+    font-family: Verdana;
+    font-weight: bold;
+    color: black;
     padding: 14px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
+}
+
+#Logo{
+    width: 100%
 }
 
 hr.minor {
@@ -23,7 +29,6 @@ hr.minor {
 h1 {
     font-family: sans-seriff;
     font-size: 50px;
-
     text-shadow: 2px 2px 1px #ff8300;
 }
 
