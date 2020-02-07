@@ -3,6 +3,7 @@ var socket = io();
 var data = [];
 var list;
 var sheet;
+var filledIn = True;
 
 //the socket call to connect to the server
 socket.on("connect", function(){
@@ -74,6 +75,7 @@ function submit()
             data[i].data = document.getElementById("" + i + "").getElementsByTagName("input")[0].value;
             if(data[0].data == ""){
                 alert("Please fill out all Fields before submitting");
+                filledIn = False;
                 break;
             }
 
@@ -93,9 +95,11 @@ function submit()
     //socket.emit('submit', sheet, [tempList]);
 
     if (socket.connected){
-        socket.emit('submit', sheet, [tempList]);
-        console.log("submited succesfully");
-        alert("Your submission has been received!");
+        if(filledIn){
+            socket.emit('submit', sheet, [tempList]);
+            console.log("submited succesfully");
+            alert("Your submission has been received!");
+        }
     } else {
         tempList.join();
         var i = 0;
@@ -103,7 +107,7 @@ function submit()
             i++;
         }
         createCookie("" + i + "",tempList);
-        alert("Internet issue! Data saved, please reconnect, DO NOT RESUBMIT!");
+        alert("Internet issue! Data is saved please reconnect, DO NOT RESUBMIT!");
         //console.log("made cookie at: " + i + " data: " + tempList);
         //console.log(getCookie("" + i + ""));
     }
