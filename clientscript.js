@@ -3,7 +3,7 @@ var socket = io();
 var data = [];
 var list;
 var sheet;
-var filledIn = True;
+var filledIn = true;
 
 //the socket call to connect to the server
 socket.on("connect", function(){
