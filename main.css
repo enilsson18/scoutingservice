@@ -6,6 +6,7 @@ body {
 
 a:link, a:visited {
     background-color: #ff8300;
+    margin: 2px;
     font-family: Verdana;
     font-weight: bold;
     color: black;
@@ -52,6 +53,7 @@ div2 {
 
 html {
     background: #2F3136;
+    zoom: 90%;
 }
 
 body::-webkit-scrollbar {
