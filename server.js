@@ -5,6 +5,7 @@ var port = process.env.PORT || 2000;
 const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
+//key = "AIzaSyAc92UYvBbtdJLEPlIDmfbb3ju0Gp2oddo";
 
 const adminPassword = "1787MilkMonigle";
 var selectedSheet = readFile("sheet.txt");
@@ -31,6 +32,7 @@ io.on("connection", function (socket){
 
     socket.on("submit", function (page, data){
         selectedSheet = page;
+        console.log(page);
         appendData = data;
         console.log(data);
         authorize(creds,AppendData);
@@ -57,9 +59,11 @@ function AppendData(auth){
 
     sheets.spreadsheets.values.append({
         spreadsheetId: '1kefhQkz-rkfXwMBTgZmBuqQWz7ENG1dnX_a0mJrT0wM',
+        //spreadsheetId: '1vFMqje5ylRG18WMW6-Oh9QQkubkFbuN1SEWQR_a8B3g',
         range: selectedSheet,
         valueInputOption: 'RAW',
         insertDataOption: 'INSERT_ROWS',
+        //key: "AIzaSyAc92UYvBbtdJLEPlIDmfbb3ju0Gp2oddo",
         resource: {
             values: appendData,
         },
@@ -73,6 +77,7 @@ function AppendData(auth){
 function ReadData(auth) {
     const sheets = google.sheets({version: 'v4', auth});
     sheets.spreadsheets.values.get({
+        //key: "AIzaSyAc92UYvBbtdJLEPlIDmfbb3ju0Gp2oddo",
         //spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
         spreadsheetId: '1kefhQkz-rkfXwMBTgZmBuqQWz7ENG1dnX_a0mJrT0wM',
         range: readData,
@@ -112,6 +117,7 @@ function authorize(credentials, callback) {
 
 function getNewToken(oAuth2Client, callback) {
     const authUrl = oAuth2Client.generateAuthUrl({
+        //key: "AIzaSyAc92UYvBbtdJLEPlIDmfbb3ju0Gp2oddo",
         access_type: 'offline',
         scope: SCOPES,
     });

@@ -24,12 +24,13 @@ function init(){
     data = [];
     list = document.getElementById("questions").getElementsByTagName("li");
 
-    if (document.title.innerText == "Field Scouting"){
+    if (document.title == "Field Scouting"){
         sheet = "field";
     }
-    if (document.title.innerText == "Pit Scouting"){
+    if (document.title == "Pit Scouting"){
         sheet = "pit";
     }
+
 
     for (var i = 0; i < list.length; i++){
         list[i].id = i;

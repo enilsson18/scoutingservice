@@ -3,7 +3,7 @@ const readline = require('readline');
 const {google} = require('googleapis');
 
 // If modifying these scopes, delete token.json.
-const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
+const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
@@ -75,6 +75,10 @@ function listMajors(auth) {
     const sheets = google.sheets({version: 'v4', auth});
     sheets.spreadsheets.values.get({
         spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
+        //spreadsheetId: '1kefhQkz-rkfXwMBTgZmBuqQWz7ENG1dnX_a0mJrT0wM',
+        //spreadsheetId: '1vFMqje5ylRG18WMW6-Oh9QQkubkFbuN1SEWQR_a8B3g',
+        //range: 'field',
+        //range: "Sheet1",
         range: 'Class Data!A2:E',
     }, (err, res) => {
         if (err) return console.log('The API returned an error: ' + err);
