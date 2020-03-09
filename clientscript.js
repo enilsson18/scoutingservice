@@ -31,7 +31,6 @@ function init(){
         sheet = "pit";
     }
 
-
     for (var i = 0; i < list.length; i++){
         list[i].id = i;
         //text
@@ -64,6 +63,9 @@ function init(){
             data.push(new question("textarea"));
             list[i].getElementsByTagName("textarea")[0].value = "";
         }
+
+        //cookify the name
+        document.getElementById("name").value = getCookie("name");
     }
 }
 
@@ -89,6 +91,9 @@ function submit()
             data[i].data = document.getElementById("" + i + "").getElementsByTagName("textarea")[0].value;
             //console.log(data[i].data);
         }
+
+        //update cookie for the name
+        createCookie("name",document.getElementById("name").value);
 
         tempList.push(data[i].data);
     }
